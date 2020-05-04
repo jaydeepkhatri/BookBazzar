@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style/books.css">
+    <title>BookBazaar</title>
+</head>
+
+<body onload="startTime()">
+    <p class="header">
+        <a href="index.html"><img class="logo" src="./book_icon.png" /></a>
+        BookBazaar
+        <span class="time" id="time"></span>
+    </p>
+    <main>
+        <div class="leftcontainer">
+            <ul class="sidebar">
+                <li><a href="" class="active">Home</a></li>
+                <li><a href="">Activity</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="./transcendence.html">Book of the Month</a></li>
+                <li><a href="">Terms & Conditions</a></li>
+                <li><a href="">Sign Out</a></li>
+            </ul>
+        </div>
+        <div class="rightcontainer">
+            <div class="bookscontainer">
+                <a href="./transcendence.html" class="book">
+                    <img src="./transcendenceS.jpg" class="bookcover" />
+                    Transcendence: My Spiritual Experiences with Pramukh Swamiji</a>
+                <div class="book"><a href="./rtv2020.html" class="book"><img src="./rtv2020S.jpg" class="bookcover" />
+                        Realizing Vision 2020: (Penguin Petit) :The progress of a nation</div></a>
+                <div class="book"><a href="./SteveJobs.html" class="book"><img src="./SteveJobsS.jpg"
+                            class="bookcover" />
+                    Steve Jobs: Goodreads Choice Awards Best History & Biography</div></a>
+                <!-- <div class="book"><img src="./transcendenceS.jpg" class="bookcover" />
+                    Transcendence: My Spiritual Experiences with Pramukh Swamiji</div>
+                <div class="book"><img src="./transcendenceS.jpg" class="bookcover" />
+                    Transcendence: My Spiritual Experiences with Pramukh Swamiji</div> -->
+            </div>
+        </div>
+    </main>
+    <script>
+        function startTime() {
+            var month = new Array();
+            month[0] = "January";
+            month[1] = "February";
+            month[2] = "March";
+            month[3] = "April";
+            month[4] = "May";
+            month[5] = "June";
+            month[6] = "July";
+            month[7] = "August";
+            month[8] = "September";
+            month[9] = "October";
+            month[10] = "November";
+            month[11] = "December";
+            var today = new Date();
+            var d = today.getDate();
+            month = month[today.getMonth()];
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('time').innerHTML =
+                d + " " + month + ",  " + h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 1000);
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+</body>
+
+</html>
